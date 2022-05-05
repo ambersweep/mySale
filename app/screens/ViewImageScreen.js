@@ -1,19 +1,29 @@
 import React from "react";
-import { Platform, TouchableHighlight, View, Button, StyleSheet, Image } from "react-native";
+import {
+  Platform,
+  TouchableHighlight,
+  TouchableOpacity,
+  View,
+  Button,
+  StyleSheet,
+  Image,
+} from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-import colors from "../config/colors"
+import colors from "../config/colors";
 
 function ViewImageScreen(props) {
   return (
     <>
       <View style={styles.container}>
         <View style={styles.closeButton}>
-            <TouchableHighlight>
-          <Icon.Button name="close-outline" style={styles.icon}/>
+          <TouchableHighlight>
+          <Icon name="close-outline" size={35} color="white" />
           </TouchableHighlight>
         </View>
         <View style={styles.deleteButton}>
-          <Icon.Button name="trash" backgroundColor="tomato" style={styles.icon}/>
+          <TouchableHighlight>
+          <Icon name="trash" size={30} color="white" />
+          </TouchableHighlight>
         </View>
         <Image
           style={styles.image}
@@ -26,22 +36,24 @@ function ViewImageScreen(props) {
 
 const styles = StyleSheet.create({
   closeButton: {
-    bottom: -15,
+    bottom: 25,
     right: 50,
     alignSelf: "flex-end",
+    backgroundColor: colors.black,
   },
   deleteButton: {
-    bottom: 20,
+    bottom:60,
     left: 50,
     alignSelf: "flex-start",
+    backgroundColor: colors.black,
   },
   container: {
-    backgroundColor: "#000",
+    backgroundColor: colors.black,
     flex: 1,
     justifyContent: "center",
   },
-  icon:{
-   marginRight:-10,
+  icon: {
+    marginRight: -10,
   },
   image: {
     width: "100%",
