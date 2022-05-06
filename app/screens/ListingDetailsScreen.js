@@ -1,16 +1,21 @@
+import { ListItem } from "@rneui/themed";
 import React from "react";
 import { View, Image, StyleSheet, Text } from "react-native";
-
+import UserDetail from "../components/UserDetail";
 import colors from "../config/colors";
 
 function ListingDetailsScreen(props) {
   return (
     <View>
-      <Image style={styles.image} source={require("../assets/leather-boots.jpg")} />
+      <Image
+        style={styles.image}
+        source={require("../assets/leather-boots.jpg")}
+      />
       <View style={styles.detailsContainer}>
         <Text style={styles.title}>Leather Boots</Text>
         <Text style={styles.price}>$150</Text>
         <View style={styles.userContainer}>
+          <UserDetail user="AC" title="Amber C" subTitle="3 listings" />
         </View>
       </View>
     </View>
@@ -36,7 +41,7 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   userContainer: {
-    marginVertical: 40,
+    marginVertical: 20,
   },
 });
 
